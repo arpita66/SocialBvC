@@ -67,24 +67,24 @@ export const loadUser = () => async (dispatch) => {
     }
   };
   
-//   export const getMyPosts = () => async (dispatch) => {
-//     try {
-//       dispatch({
-//         type: "myPostsRequest",
-//       });
+   export const getMyPosts = () => async (dispatch) => {
+     try {
+       dispatch({
+         type: "myPostsRequest",
+       });
   
-//       const { data } = await axios.get("/api/v1/my/posts");
-//       dispatch({
-//         type: "myPostsSuccess",
-//         payload: data.posts,
-//       });
-//     } catch (error) {
-//       dispatch({
-//         type: "myPostsFailure",
-//         payload: error.response.data.message,
-//       });
-//     }
-//   };
+       const { data } = await axios.get("/api/v1/my/posts");
+       dispatch({
+         type: "myPostsSuccess",
+         payload: data.posts,
+       });
+     } catch (error) {
+       dispatch({
+         type: "myPostsFailure",
+         payload: error.response.data.message,
+       });
+     }
+   };
   
   export const getAllUsers = 
     (name = "") =>
@@ -107,24 +107,24 @@ export const loadUser = () => async (dispatch) => {
       }
     };
   
-//   export const logoutUser = () => async (dispatch) => {
-//     try {
-//       dispatch({
-//         type: "LogoutUserRequest",
-//       });
+   export const logoutUser = () => async (dispatch) => {
+     try {
+       dispatch({
+         type: "LogoutUserRequest",
+       });
   
-//       await axios.get("/api/v1/logout");
+       await axios.get("/api/v1/logout");
   
-//       dispatch({
-//         type: "LogoutUserSuccess",
-//       });
-//     } catch (error) {
-//       dispatch({
-//         type: "LogoutUserFailure",
-//         payload: error.response.data.message,
-//       });
-//     }
-//   };
+       dispatch({
+         type: "LogoutUserSuccess",
+       });
+     } catch (error) {
+       dispatch({
+         type: "LogoutUserFailure",
+         payload: error.response.data.message,
+       });
+     }
+   };
   
 //   export const registerUser =
 //     (name, email, password, avatar) => async (dispatch) => {

@@ -13,7 +13,7 @@ const store = configureStore({
       postOfFollowing: postOfFollowingReducer,
       allUsers: allUsersReducer,
       like: likeReducer,
-//       //myPosts: myPostsReducer,
+      myPosts: myPostsReducer,
 //       //userProfile: userProfileReducer,
 //       //userPosts: userPostsReducer,
     },

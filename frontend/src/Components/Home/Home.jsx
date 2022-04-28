@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useEffect }from "react";
 import Post from "../Post/Post";
 import User from "../User/User";
 import "./Home.css";
@@ -22,10 +22,10 @@ const Home = () => {
 
   const { error: likeError, message } = useSelector((state) => state.like);
 
-  useEffect(() => {
-    dispatch(getFollowingPosts());
-    dispatch(getAllUsers());
-  }, [dispatch]);
+ // useEffect(() => {
+ //   dispatch(getFollowingPosts());
+ //   dispatch(getAllUsers());
+ // }, [dispatch]);
 
   useEffect(() => {
     if (error) {
