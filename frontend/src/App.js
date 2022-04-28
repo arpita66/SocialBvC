@@ -17,6 +17,7 @@ function App() {
   return (
     <Router>
     {isAuthenticated && <Header />}
+   
     <Routes>
         <Route path="/" element={isAuthenticated ? <Home /> : <Login />} />
       </Routes>

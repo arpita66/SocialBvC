@@ -130,7 +130,7 @@ exports.getPostOfFollowing = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      posts: posts.reverse(),
+      posts: posts.reverse(),          //to get new posts on top
     });
   } catch (error) {
     res.status(500).json({
