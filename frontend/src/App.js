@@ -19,7 +19,7 @@ function App() {
     {isAuthenticated && <Header />}
     <Routes>
         <Route path="/" element={isAuthenticated ? <Home /> : <Login />} />
-    </Routes>
+      </Routes>
     </Router>
     
   );
