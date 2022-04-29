@@ -92,8 +92,8 @@ const Post = ({
     <div className="post">
       <div className="postHeader">
           {isAccount ? ( 
-            <Button>
-              onClick={() => setCaptionToggle(!captionToggle)}
+            <Button
+              onClick={() => setCaptionToggle(!captionToggle)}>
              <MoreVert />
            </Button>
          ) : null} 
@@ -146,11 +146,11 @@ const Post = ({
            <ChatBubbleOutline />
          </Button> 
 
-         isDelete ? (
+         {isDelete ? (
            <Button onClick={deletePostHandler}>
              <DeleteOutline />
            </Button>
-         ) : null 
+         ) : null} 
        </div>
 
        <Dialog open={likesUser} onClose={() => setLikesUser(!likesUser)}>

@@ -64,7 +64,7 @@ const Register = () => {
           required
           onChange={(e) => setName(e.target.value)}
         />
-        
+
         <input
           type="text"
           value={smart_id}

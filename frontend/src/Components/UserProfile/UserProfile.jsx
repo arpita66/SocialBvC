@@ -115,6 +115,7 @@ const UserProfile = () => {
             />
 
             <Typography variant="h5">{user.name}</Typography>
+            {/* <Typography variant="h5">{user.smart_id}</Typography> */}
 
             <div>
               <button onClick={() => setFollowersToggle(!followersToggle)}>

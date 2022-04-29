@@ -22,10 +22,10 @@ const Home = () => {
 
   const { error: likeError, message } = useSelector((state) => state.like);
 
- // useEffect(() => {
- //   dispatch(getFollowingPosts());
- //   dispatch(getAllUsers());
- // }, [dispatch]);
+ useEffect(() => {
+   dispatch(getFollowingPosts());
+   dispatch(getAllUsers());
+ }, [dispatch]);
 
   useEffect(() => {
     if (error) {

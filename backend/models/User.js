@@ -14,17 +14,17 @@ const userSchema = new mongoose.Schema({
         url: String,
       },
     
+      smart_id: {
+        type: String,
+        required: [true, "Please enter your smart-card id"],
+        length: 10,
+        unique: [true, "Id already exists"],
+      },
+      
       email: {
         type: String,
         required: [true, "Please enter your email"],
         unique: [true, "Email already exists"],
-      },
-
-      smart_id: {
-        type: String,
-        required: [true, "Please enter your smart-card id"],
-        minlength: 10,
-        maxLength: 10
       },
 
       password: {
