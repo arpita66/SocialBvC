@@ -7,7 +7,7 @@ import { loadUser } from "./Actions/User";
 import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
 import Account from "./Components/Account/Account";
-//import NewPost from "./Components/NewPost/NewPost";
+import NewPost from "./Components/NewPost/NewPost";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -26,11 +26,11 @@ function App() {
           path="/account"
           element={isAuthenticated ? <Account /> : <Login />}
         />
-      {/*}  <Route
+        <Route
           path="/newpost"
           element={isAuthenticated ? <NewPost /> : <Login />}
         />
-  */}    
+      
     
     
     </Routes>

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { deleteMyProfile, getMyPosts, logoutUser } from "../../Actions/User";
+import {  getMyPosts, logoutUser } from "../../Actions/User";
 import Loader from "../Loader/Loader";
 import Post from "../Post/Post";
 import User from "../User/User";
@@ -29,10 +29,10 @@ const Account = () => {
     alert.success("Logged out successfully");
   };
 
-  const deleteProfileHandler = async () => {
+{ /* const deleteProfileHandler = async () => {
     await dispatch(deleteMyProfile());
     dispatch(logoutUser());
-  };
+  };*/}
 
   useEffect(() => {
     dispatch(getMyPosts());
@@ -116,7 +116,7 @@ const Account = () => {
         <Button
           variant="text"
           style={{ color: "red", margin: "2vmax" }}
-          onClick={deleteProfileHandler}
+         // onClick={deleteProfileHandler}
           disabled={deleteLoading}
         >
           Delete My Account 
