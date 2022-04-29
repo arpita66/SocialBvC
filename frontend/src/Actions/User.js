@@ -155,7 +155,7 @@ export const loadUser = () => async (dispatch) => {
        }
      };
   
-   export const updateProfile = (name, email, avatar) => async (dispatch) => {
+   export const updateProfile = (name,smart_id, email, avatar) => async (dispatch) => {
      try {
        dispatch({
          type: "updateProfileRequest",
@@ -163,7 +163,7 @@ export const loadUser = () => async (dispatch) => {
   
        const { data } = await axios.put(
          "/api/v1/update/profile",
-         { name, email, avatar },
+         { name, smart_id, email, avatar },
          {
            headers: {
              "Content-Type": "application/json",
