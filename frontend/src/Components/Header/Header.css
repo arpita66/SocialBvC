@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#92debafe;
+    height: 3vmax;
+    background-color:#4ce4bb;
   }
   
   .header > a {
