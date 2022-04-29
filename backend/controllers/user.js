@@ -493,27 +493,27 @@ exports.resetPassword = async (req, res) => {
    }
  };
 
-// exports.getUserPosts = async (req, res) => {
-//   try {
-//     const user = await User.findById(req.params.id);
+ exports.getUserPosts = async (req, res) => {
+   try {
+     const user = await User.findById(req.params.id);
 
-//     const posts = [];
+     const posts = [];
 
-//     for (let i = 0; i < user.posts.length; i++) {
-//       const post = await Post.findById(user.posts[i]).populate(
-//         "likes comments.user owner"
-//       );
-//       posts.push(post);
-//     }
+     for (let i = 0; i < user.posts.length; i++) {
+       const post = await Post.findById(user.posts[i]).populate(
+         "likes comments.user owner"
+       );
+       posts.push(post);
+     }
 
-//     res.status(200).json({
-//       success: true,
-//       posts,
-//     });
-//   } catch (error) {
-//     res.status(500).json({
-//       success: false,
-//       message: error.message,
-//     });
-//   }
-// };
+     res.status(200).json({
+       success: true,
+       posts,
+     });
+   } catch (error) {
+     res.status(500).json({
+       success: false,
+       message: error.message,
+     });
+   }
+ };

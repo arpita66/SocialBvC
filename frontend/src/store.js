@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import {
    allUsersReducer,
    postOfFollowingReducer,
-// //    userProfileReducer,
+   userProfileReducer,
     userReducer,
   } from "./Reducers/User";
 import { likeReducer, myPostsReducer, userPostsReducer } from "./Reducers/Post";
@@ -14,8 +14,8 @@ const store = configureStore({
       allUsers: allUsersReducer,
       like: likeReducer,
       myPosts: myPostsReducer,
-//       //userProfile: userProfileReducer,
-//       //userPosts: userPostsReducer,
+      userProfile: userProfileReducer,
+      userPosts: userPostsReducer,
     },
   });
 export default store;

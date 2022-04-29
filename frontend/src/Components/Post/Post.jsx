@@ -15,9 +15,9 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addCommentOnPost,
-//   deletePost,
+   deletePost,
   likePost,
-//   updatePost,
+  updatePost,
 } from "../../Actions/Post";
 import { getFollowingPosts, getMyPosts, loadUser } from "../../Actions/User";
 import User from "../User/User";
@@ -39,8 +39,8 @@ const Post = ({
    const [likesUser, setLikesUser] = useState(false);
    const [commentValue, setCommentValue] = useState("");
    const [commentToggle, setCommentToggle] = useState(false);
-//   const [captionValue, setCaptionValue] = useState(caption);
-//   const [captionToggle, setCaptionToggle] = useState(false);
+   const [captionValue, setCaptionValue] = useState(caption);
+   const [captionToggle, setCaptionToggle] = useState(false);
 
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
@@ -68,17 +68,17 @@ const Post = ({
      }
    };
 
-//   const updateCaptionHandler = (e) => {
-//     e.preventDefault();
-//     dispatch(updatePost(captionValue, postId));
-//     dispatch(getMyPosts());
-//   };
+   const updateCaptionHandler = (e) => {
+     e.preventDefault();
+     dispatch(updatePost(captionValue, postId));
+     dispatch(getMyPosts());
+   };
 
-//   const deletePostHandler = async () => {
-//     await dispatch(deletePost(postId));
-//     dispatch(getMyPosts());
-//     dispatch(loadUser());
-//   };
+   const deletePostHandler = async () => {
+     await dispatch(deletePost(postId));
+     dispatch(getMyPosts());
+     dispatch(loadUser());
+   };
 
    useEffect(() => {
      likes.forEach((item) => {
@@ -93,7 +93,7 @@ const Post = ({
       <div className="postHeader">
           {isAccount ? ( 
             <Button>
-             {/* onClick={() => setCaptionToggle(!captionToggle)}>  */}
+              onClick={() => setCaptionToggle(!captionToggle)}
              <MoreVert />
            </Button>
          ) : null} 
@@ -146,11 +146,11 @@ const Post = ({
            <ChatBubbleOutline />
          </Button> 
 
-         {/* isDelete ? (
+         isDelete ? (
            <Button onClick={deletePostHandler}>
              <DeleteOutline />
            </Button>
-         ) : null */}
+         ) : null 
        </div>
 
        <Dialog open={likesUser} onClose={() => setLikesUser(!likesUser)}>
@@ -209,28 +209,28 @@ const Post = ({
          </div> 
        </Dialog> 
 
-       {/* <Dialog */}
-         {/* open={captionToggle} */}
-         {/* onClose={() => setCaptionToggle(!captionToggle)} */}
-       {/* > */}
-         {/* <div className="DialogBox"> */}
-           {/* <Typography variant="h4">Update Caption</Typography> */}
+       <Dialog 
+         open={captionToggle} 
+         onClose={() => setCaptionToggle(!captionToggle)} 
+       > 
+         <div className="DialogBox"> 
+           <Typography variant="h4">Update Caption</Typography> 
 
-           {/* <form className="commentForm" onSubmit={updateCaptionHandler}> */}
-             {/* <input */}
-               {/* type="text" */}
-               {/* value={captionValue} */}
-               {/* onChange={(e) => setCaptionValue(e.target.value)} */}
-               {/* placeholder="Caption Here..." */}
-               {/* required */}
-             {/* /> */}
+           <form className="commentForm" onSubmit={updateCaptionHandler}> 
+             <input 
+               type="text" 
+               value={captionValue} 
+               onChange={(e) => setCaptionValue(e.target.value)} 
+               placeholder="Caption Here..." 
+               required 
+             /> 
 
-             {/* <Button type="submit" variant="contained"> */}
-               {/* Update */}
-             {/* </Button> */}
-           {/* </form> */}
-         {/* </div> */}
-      {/* </Dialog> */}
+             <Button type="submit" variant="contained"> 
+               Update 
+             </Button> 
+           </form> 
+         </div> 
+      </Dialog> 
      </div>
   );
 };

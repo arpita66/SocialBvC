@@ -9,7 +9,7 @@ export const userReducer = createReducer(initialState, {
   },
   LoginSuccess: (state, action) => {
     state.loading = false;
-    state.user = action.payload;        //payload se data fetch karke aage bhej denge
+    state.user = action.payload;       
     state.isAuthenticated = true;
   },
   LoginFailure: (state, action) => {
@@ -97,19 +97,19 @@ export const allUsersReducer = createReducer(initialState, {
   },
 });
 
-// export const userProfileReducer = createReducer(initialState, {
-//   userProfileRequest: (state) => {
-//     state.loading = true;
-//   },
-//   userProfileSuccess: (state, action) => {
-//     state.loading = false;
-//     state.user = action.payload;
-//   },
-//   userProfileFailure: (state, action) => {
-//     state.loading = false;
-//     state.error = action.payload;
-//   },
-//   clearErrors: (state) => {
-//     state.error = null;
-//   },
-// });
+ export const userProfileReducer = createReducer(initialState, {
+   userProfileRequest: (state) => {
+     state.loading = true;
+   },
+   userProfileSuccess: (state, action) => {
+     state.loading = false;
+     state.user = action.payload;
+   },
+   userProfileFailure: (state, action) => {
+     state.loading = false;
+     state.error = action.payload;
+   },
+   clearErrors: (state) => {
+     state.error = null;
+   },
+ });
