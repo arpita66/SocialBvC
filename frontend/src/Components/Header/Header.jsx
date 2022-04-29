@@ -11,11 +11,16 @@ import {
   AccountCircle,
   AccountCircleOutlined,
 } from "@mui/icons-material";
+import { Typography } from "@mui/material";
 
 const Header = () => {
+  
   const [tab, setTab] = useState(window.location.pathname);      //ab location initial state hi rahegi reload krne par bhi
   return (
     <div className="header">
+    <Typography variant="h5" style={{ padding: "1vmax" }}>
+          BvConnect
+  </Typography>
        <Link to="/" onClick={() => setTab("/")}>
          {tab === "/" ? <Home style={{ color: "black" }} /> : <HomeOutlined />}
        </Link>
