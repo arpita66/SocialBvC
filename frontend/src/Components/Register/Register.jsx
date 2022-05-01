@@ -43,15 +43,21 @@ const Register = () => {
   }, [dispatch, error, alert]);
   return (
     <div className="register">
+
+        <div className="registerLeft">
+          <h3 className="registerLogo">BvConnect</h3>
+          <span className="registerDesc">
+          Lets get you started! Enter your personal details and start journey with us.
+          </span>
+        </div>
+
       <form className="registerForm" onSubmit={submitHandler}>
-        <Typography variant="h3" style={{ padding: "2vmax" }}>
-          BvConnect
-        </Typography>
+        
 
         <Avatar
           src={avatar}
           alt="User"
-          sx={{ height: "10vmax", width: "10vmax" }}
+          sx={{ height: "8vmax", width: "8vmax" }}
         />
 
         <input type="file" accept="image/*" onChange={handleImageChange} />
@@ -91,14 +97,16 @@ const Register = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <br/>
+        <Button disabled={loading} type="submit">
+          Sign Up
+        </Button>
 
         <Link to="/">
           <Typography>Already Signed Up? Login Now</Typography>
         </Link>
 
-        <Button disabled={loading} type="submit">
-          Sign Up
-        </Button>
+        
       </form>
     </div>
   );
