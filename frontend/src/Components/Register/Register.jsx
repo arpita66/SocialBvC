@@ -5,36 +5,29 @@ import { Link } from "react-router-dom";
 import "./Register.css";
 import { registerUser } from "../../Actions/User";
 import { useAlert } from "react-alert";
-
 const Register = () => {
   const [name, setName] = useState("");
   const [smart_id, setSmart_ID] = useState("");
   const [email, setEmail] = useState("");
   const [avatar, setAvatar] = useState("");
   const [password, setPassword] = useState("");
-
   const dispatch = useDispatch();
   const alert = useAlert();
   const { loading, error } = useSelector((state) => state.user);
-
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-
     const Reader = new FileReader();
     Reader.readAsDataURL(file);
-
     Reader.onload = () => {
       if (Reader.readyState === 2) {
         setAvatar(Reader.result);
       }
     };
   };
-
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(registerUser(name, smart_id, email, password, avatar));
   };
-
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -52,7 +45,7 @@ const Register = () => {
         </div>
 
       <form className="registerForm" onSubmit={submitHandler}>
-        
+
 
         <Avatar
           src={avatar}
@@ -61,7 +54,6 @@ const Register = () => {
         />
 
         <input type="file" accept="image/*" onChange={handleImageChange} />
-
         <input
           type="text"
           value={name}
@@ -70,7 +62,6 @@ const Register = () => {
           required
           onChange={(e) => setName(e.target.value)}
         />
-
         <input
           type="text"
           value={smart_id}
@@ -79,7 +70,6 @@ const Register = () => {
           required
           onChange={(e) => setSmart_ID(e.target.value)}
         />
-
         <input
           type="email"
           placeholder="Email"
@@ -88,7 +78,6 @@ const Register = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-
         <input
           type="password"
           className="registerInputs"
@@ -106,10 +95,9 @@ const Register = () => {
           <Typography>Already Signed Up? Login Now</Typography>
         </Link>
 
-        
+
       </form>
     </div>
   );
 };
-
 export default Register;

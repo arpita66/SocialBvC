@@ -3,7 +3,7 @@ import {
    allUsersReducer,
    postOfFollowingReducer,
    userProfileReducer,
-    userReducer,
+   userReducer,
   } from "./Reducers/User";
 import { likeReducer, myPostsReducer, userPostsReducer } from "./Reducers/Post";
 

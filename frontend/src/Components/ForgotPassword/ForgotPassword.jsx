@@ -6,16 +6,13 @@ import { forgotPassword } from "../../Actions/User";
 import "./ForgotPassword.css";
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
-
   const dispatch = useDispatch();
   const alert = useAlert();
   const { error, loading, message } = useSelector((state) => state.like);
-
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(forgotPassword(email));
   };
-
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -32,7 +29,6 @@ const ForgotPassword = () => {
         <Typography variant="h3" style={{ padding: "2vmax" }}>
           BvConnect
         </Typography>
-
         <input
           type="email"
           placeholder="Email"
@@ -49,5 +45,4 @@ const ForgotPassword = () => {
     </div>
   );
 };
-
 export default ForgotPassword;

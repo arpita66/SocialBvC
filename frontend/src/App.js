@@ -17,6 +17,7 @@ import UserProfile from "./Components/UserProfile/UserProfile";
 import Search from "./Components/Search/Search";
 import NotFound from "./Components/NotFound/NotFound";
 
+
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -65,12 +66,12 @@ function App() {
           element={isAuthenticated ? <UpdatePassword /> : <ResetPassword />}
         />
 
+        <Route path="search" element={<Search />} />
+
         <Route
           path="/user/:id"
           element={isAuthenticated ? <UserProfile /> : <Login />}
         />
-
-        <Route path="search" element={<Search />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
