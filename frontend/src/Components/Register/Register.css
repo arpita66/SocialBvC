@@ -1,17 +1,16 @@
 .register {
     min-height: 100vh;
-    background-image: linear-gradient(to right, #fff5bc, #cec1ff);
-  
+    background-image: linear-gradient(to right, #d5f6ec44, #e0f5eee5);  
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     padding: 2vmax;
     box-sizing: border-box;
   }
   
   .registerForm {
     background-color: white;
-    width: 50%;
+    width: 45%;
     border-radius: 30px;
     box-sizing: border-box;
     padding: 2vmax;
@@ -26,7 +25,7 @@
     width: 80%;
     border-radius: 40px;
     border: 1px solid #ccc;
-    margin: 2vmax;
+    margin: 3px;
     font: 100 1.2rem "Roboto", sans-serif;
     outline: none;
   }
@@ -79,4 +78,23 @@
       text-decoration: none;
       color: rgba(0, 0, 0, 0.342);
     }
+  }
+
+  .registerLeft{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .registerLogo {
+    font-size: 50px;
+    font-weight: 800;
+    color: #26b692;
+    margin-bottom: 10px;
+    font-family: Lucida Handwriting;
+  }
+
+  .registerDesc {
+    font-size: 24px;
   }

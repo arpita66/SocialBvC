@@ -43,7 +43,7 @@ const ForgotPassword = () => {
         />
 
         <Button disabled={loading} type="submit">
-          Send Token
+          Send Reset Link
         </Button>
       </form>
     </div>
