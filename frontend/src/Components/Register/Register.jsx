@@ -93,7 +93,6 @@ const Register = () => {
           value={Designation}
           className="registerInputs"
           placeholder="Designation (Student/Alumni/Faculty)"
-          required
           onChange={(e) => setDesignation(e.target.value)}
         />
 

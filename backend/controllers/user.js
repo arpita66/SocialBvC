@@ -1,12 +1,13 @@
 const User = require("../models/User");
 const Post = require("../models/Post");
+const v_users = require("../models/v_users");
 const { sendEmail } = require("../middlewares/sendEmail");
 const crypto = require("crypto");
 const cloudinary = require("cloudinary");
 
 exports.register = async (req, res) => {
   try {
-    const { name, smart_id, email, password, avatar, Designation } = req.body;
+    const { name, smart_id, email, password, avatar } = req.body;
 
     let user = await User.findOne({ email});              
     if (user) {
@@ -22,6 +23,13 @@ exports.register = async (req, res) => {
         .json({ success: false, message: "User ID already exists" });
     }
 
+    let user2 = await v_users.findOne({ smart_id });               //smart_id already exists
+    if (!user2) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Enter a valid userID" });
+    }
+
     const myCloud = await cloudinary.v2.uploader.upload(avatar, {
       folder: "avatars",
     });
@@ -32,7 +40,6 @@ exports.register = async (req, res) => {
       email,
       password,
       avatar : { public_id: myCloud.public_id, url: myCloud.secure_url  },
-      Designation
     });
 
     const token = await user.generateToken();
@@ -204,7 +211,7 @@ exports.updateProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
 
-    const { name, email, avatar, Designation } = req.body;
+    const { name, email, avatar } = req.body;
 
     if (name) {
       user.name = name;
@@ -221,10 +228,6 @@ exports.updateProfile = async (req, res) => {
       });
       user.avatar.public_id = myCloud.public_id;
       user.avatar.url = myCloud.secure_url;
-    }
-
-    if (Designation) {
-      user.Designation = Designation;
     }
 
     await user.save();
@@ -372,10 +375,10 @@ exports.getAllUsers = async (req, res) => {
     const users = await User.find({
       name: { $regex: req.query.name, $options: "i" },
     });
-    
+
     res.status(200).json({
       success: true,
-      users,
+      users1,
     });
   } catch (error) {
     res.status(500).json({
