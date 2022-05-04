@@ -36,7 +36,7 @@ const Login = () => {
 
   return (
     <div className="login">
-      
+
        <div className="loginLeft">
           <h3 className="loginLogo">BvConnect</h3>
           <span className="loginDesc">
@@ -48,7 +48,6 @@ const Login = () => {
        onSubmit={loginHandler}
        >
 
-
          <input
           type="email"
           placeholder="Email"
@@ -56,7 +55,6 @@ const Login = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-
          <input
           type="password"
           placeholder="Password"
@@ -79,4 +77,4 @@ const Login = () => {
   );
 };
 
- export default Login;
+export default Login;

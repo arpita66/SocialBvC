@@ -17,7 +17,7 @@
   .header > a {
     width: 2vmax;
     height: 2vmax;
-    margin: 1vmax 4vmax;
+    margin: 1vmax 2vmax;      /*to change spacing between icons*/
 
   }
   .header > a > svg {        

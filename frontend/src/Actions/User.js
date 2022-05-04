@@ -106,7 +106,7 @@ export const loadUser = () => async (dispatch) => {
         });
       }
     };
-  
+    
    export const logoutUser = () => async (dispatch) => {
      try {
        dispatch({

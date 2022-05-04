@@ -3,6 +3,10 @@
     width: 100%;
     display: grid;
     place-items: center;
+    justify-content: center;
+    border-top: 10px solid rgb(34, 34, 34);
+    border-bottom: 10px solid rgb(32, 23, 23);
+    animation: 5s ease infinite alternate;
   }
   
   .loadingCircle {

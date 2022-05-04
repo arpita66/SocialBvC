@@ -12,16 +12,15 @@ exports.register = async (req, res) => {
     if (user) {
       return res
         .status(400)
-        .json({ success: false, message: "User already exists" });
+        .json({ success: false, message: "Email already exists" });
     }
     
     let user1 = await User.findOne({ smart_id });               //smart_id already exists
     if (user1) {
       return res
         .status(400)
-        .json({ success: false, message: "User already exists" });
+        .json({ success: false, message: "User ID already exists" });
     }
-
 
     const myCloud = await cloudinary.v2.uploader.upload(avatar, {
       folder: "avatars",
