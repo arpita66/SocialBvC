@@ -372,7 +372,7 @@ exports.getAllUsers = async (req, res) => {
     const users = await User.find({
       name: { $regex: req.query.name, $options: "i" },
     });
-
+    
     res.status(200).json({
       success: true,
       users,
