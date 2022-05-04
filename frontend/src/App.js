@@ -13,6 +13,7 @@ import UpdateProfile from "./Components/UpdateProfile/UpdateProfile";
 import UpdatePassword from "./Components/UpdatePassword/UpdatePassword";
 import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
+// import Messenger from "./Components/Messenger/Messenger";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import Search from "./Components/Search/Search";
 import NotFound from "./Components/NotFound/NotFound";
@@ -65,6 +66,11 @@ function App() {
           path="/password/reset/:token"
           element={isAuthenticated ? <UpdatePassword /> : <ResetPassword />}
         />
+
+        {/* <Route
+          path="/messenger"
+          element={isAuthenticated ? <Messenger /> : <Login />}
+        /> */}
 
         <Route path="search" element={<Search />} />
 

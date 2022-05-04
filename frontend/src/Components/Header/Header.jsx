@@ -46,8 +46,8 @@ const Header = () => {
          }
         </Link> 
 
-       <Link to="/chat" onClick={() => setTab("/chat")}>            
-        {tab === "/chat" ? 
+       <Link to="/messenger" onClick={() => setTab("/messenger")}>            
+        {tab === "/messenger" ? 
            (<Message style={{ color: "black" }} />)
            : 
            ( <MessageOutlined />)

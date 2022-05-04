@@ -1,7 +1,7 @@
 .commentUser {
     display: flex;
     align-items: center;
-    color: rgba(0, 0, 0, 0.507);
+    color: rgba(0, 0, 0, 0.549);
   }
   
   .commentUser > a {
@@ -11,13 +11,14 @@
     align-items: center;
     align-self: flex-start;
     transition: all 0.5s;
+    margin-right: 10px;
   }
   .commentUser img {
     height: 3vmax;
     width: 3vmax;
     margin: 1vmax;
     border-radius: 100%;
-    border: 3px solid rgb(255, 201, 201);
+    border: 1px solid rgb(241, 229, 229);
   }
   
   .commentUser > a:hover {
