@@ -12,7 +12,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [avatar, setAvatar] = useState("");
   const [password, setPassword] = useState("");
-
+  const [Designation, setDesignation] = useState("");
   const dispatch = useDispatch();
   const alert = useAlert();
   const { loading, error } = useSelector((state) => state.user);
@@ -32,7 +32,7 @@ const Register = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(registerUser(name, smart_id, email, password, avatar));
+    dispatch(registerUser(name, smart_id, email, password, avatar, Designation));
   };
 
   useEffect(() => {
@@ -97,6 +97,16 @@ const Register = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+
+        <input
+          type="text"
+          value={Designation}
+          className="registerInputs"
+          placeholder="Designation (Student/Alumni/Faculty)"
+          required
+          onChange={(e) => setDesignation(e.target.value)}
+        />
+
         <br/>
         <Button disabled={loading} type="submit">
           Sign Up

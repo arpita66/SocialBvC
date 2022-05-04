@@ -19,6 +19,7 @@ const UpdateProfile = () => {
   const [email, setEmail] = useState(user.email);
   const [avatar, setAvatar] = useState("");
   const [avatarPrev, setAvatarPrev] = useState(user.avatar.url);
+  const [Designation, setDesignation] = useState(user.Designation);
 
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -40,7 +41,7 @@ const UpdateProfile = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    await dispatch(updateProfile(name, smart_id, email, avatar));
+    await dispatch(updateProfile(name, smart_id, email, avatar, Designation));
     dispatch(loadUser());
   };
 
@@ -102,6 +103,15 @@ const UpdateProfile = () => {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+        />
+
+        <input
+          type="text"
+          value={Designation}
+          placeholder="Designation (Student/Alumni/Faculty)"
+          className="updateProfileInputs"
+          required
+          onChange={(e) => setDesignation(e.target.value)}
         />
 
         <Button disabled={updateLoading} type="submit">

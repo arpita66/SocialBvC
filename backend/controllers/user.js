@@ -6,7 +6,7 @@ const cloudinary = require("cloudinary");
 
 exports.register = async (req, res) => {
   try {
-    const { name, smart_id, email, password, avatar } = req.body;
+    const { name, smart_id, email, password, avatar, Designation } = req.body;
 
     let user = await User.findOne({ email});              
     if (user) {
@@ -33,6 +33,7 @@ exports.register = async (req, res) => {
       email,
       password,
       avatar : { public_id: myCloud.public_id, url: myCloud.secure_url  },
+      Designation
     });
 
     const token = await user.generateToken();
@@ -204,7 +205,7 @@ exports.updateProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
 
-    const { name, email, avatar } = req.body;
+    const { name, email, avatar, Designation } = req.body;
 
     if (name) {
       user.name = name;
@@ -221,6 +222,10 @@ exports.updateProfile = async (req, res) => {
       });
       user.avatar.public_id = myCloud.public_id;
       user.avatar.url = myCloud.secure_url;
+    }
+
+    if (Designation) {
+      user.Designation = Designation;
     }
 
     await user.save();

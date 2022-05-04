@@ -6,16 +6,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../Actions/User";
 import { fontFamily } from "@mui/material/node_modules/@mui/system";
 import { alignProperty } from "@mui/material/styles/cssUtils";
-// import { useAlert } from "react-alert";
+import { useAlert } from "react-alert";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-//   const alert = useAlert();
+  const alert = useAlert();
 
-//   const { error } = useSelector((state) => state.user);
-//   const { message } = useSelector((state) => state.like);
+  const { error } = useSelector((state) => state.user);
+  const { message } = useSelector((state) => state.like);
 
   const loginHandler = (e) => {
     e.preventDefault();                //page reload nahi hoga submit karne par
@@ -23,16 +23,16 @@ const Login = () => {
     dispatch(loginUser(email, password));
   };
 
-//   useEffect(() => {
-//    if (error) {
-//       alert.error(error);
-//       dispatch({ type: "clearErrors" });
-//     }
-//     if (message) {
-//       alert.success(message);
-//       dispatch({ type: "clearMessage" });
-//     }
-//   }, [alert, error, dispatch, message]);
+  useEffect(() => {
+    if (error) {
+       alert.error(error);
+       dispatch({ type: "clearErrors" });
+     }
+     if (message) {
+      alert.success(message);
+      dispatch({ type: "clearMessage" });
+     }
+   }, [alert, error, dispatch, message]);
 
   return (
     <div className="login">

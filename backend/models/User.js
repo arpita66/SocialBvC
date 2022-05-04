@@ -2,6 +2,7 @@ const mongoose = require("mongoose")
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
+const { stringify } = require("querystring");
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -32,6 +33,10 @@ const userSchema = new mongoose.Schema({
         required: [true, "Please enter a password"],
         minlength: [6, "Password must be at least 6 characters"],
         select: false, //jab bbi ham user ka data access karenge to usme isko chodhke baaki saare fields aane chahiye
+      },
+
+      Designation: {
+        type: String,
       },
     
       posts: [

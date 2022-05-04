@@ -73,6 +73,7 @@ const Home = () => {
               userId={user._id}
               name={user.name}
               avatar={user.avatar.url}
+              Designation = {user.Designation}              
             />
            ))
          ) : (

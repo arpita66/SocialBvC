@@ -7,7 +7,7 @@
   
   .accountleft {
     background-image: linear-gradient(to right, #d5f6ec44, #e0f5eee5);
-  
+    padding-top: 10px ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,7 +16,7 @@
     overflow-y: auto;
   }
   .accountright {
-    padding: 2vmax;
+    padding: 3vmax;
     box-sizing: border-box;
     overflow-y: auto;
     display: flex;

@@ -4,7 +4,9 @@
   background-color: #4ce4bb;
   display: flex;
   align-items: center;
-  position: sticky;
+  position: fixed;
+  top: 0;
+  right: 0;
   margin-top: 0vmax;
   z-index: 999;
   }
