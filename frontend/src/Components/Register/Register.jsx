@@ -97,6 +97,7 @@ const Register = () => {
         />
 
         <br/>
+        
         <Button disabled={loading} type="submit">
           Sign Up
         </Button>
