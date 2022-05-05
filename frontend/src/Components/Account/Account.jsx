@@ -86,7 +86,7 @@ const Account = () => {
         />
 
         <Typography variant="h5">{user.name}</Typography>
-        <Typography variant="h6">{user.Designation}</Typography>
+        <Typography variant="h6" color="rgba(105,100,100,0.548)">{user.Designation}</Typography>
       {/*  <Typography variant="h5">Designation</Typography>*/}
         <div>
           <button onClick={() => setFollowersToggle(!followersToggle)}>

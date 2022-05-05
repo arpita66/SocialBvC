@@ -155,7 +155,7 @@ export const loadUser = () => async (dispatch) => {
        }
      };
   
-   export const updateProfile = (name,smart_id, email, avatar,Designation) => async (dispatch) => {
+   export const updateProfile = (name,smart_id, email, avatar, Designation) => async (dispatch) => {
      try {
        dispatch({
          type: "updateProfileRequest",

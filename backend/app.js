@@ -14,9 +14,13 @@ app.use(cookieParser());
 // Importing Routes
 const post = require("./routes/post");
 const user = require("./routes/user");
+const conversationRoute = require("./routes/conversations");
+const messageRoute = require("./routes/messages");
 
 // Using Routes
 app.use("/api/v1", post);
 app.use("/api/v1", user);
+app.use("/api/v1/conversations", conversationRoute);
+app.use("/api/v1/messages" , messageRoute);
 
 module.exports = app;

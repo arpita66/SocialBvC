@@ -7,7 +7,7 @@ const cloudinary = require("cloudinary");
 
 exports.register = async (req, res) => {
   try {
-    const { name, smart_id, email, password, avatar } = req.body;
+    const { name, smart_id, email, password, avatar, Designation } = req.body;
 
     let user = await User.findOne({ email});              
     if (user) {
@@ -40,6 +40,7 @@ exports.register = async (req, res) => {
       email,
       password,
       avatar : { public_id: myCloud.public_id, url: myCloud.secure_url  },
+      Designation
     });
 
     const token = await user.generateToken();
@@ -378,7 +379,7 @@ exports.getAllUsers = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      users1,
+      users,
     });
   } catch (error) {
     res.status(500).json({

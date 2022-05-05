@@ -11,6 +11,7 @@ import {
 import Loader from "../Loader/Loader";
 import Post from "../Post/Post";
 import User from "../User/User";
+import "./UserProfile.css";
 
 const UserProfile = () => {
   const dispatch = useDispatch();
@@ -103,7 +104,7 @@ const UserProfile = () => {
             />
           ))
         ) : (
-          <Typography variant="h6">User has not posted anything yet.</Typography>
+          <Typography variant="h5">User has not posted anything yet.</Typography>
         )}
       </div>
       <div className="accountright">
@@ -115,7 +116,7 @@ const UserProfile = () => {
             />
 
             <Typography variant="h5">{user.name}</Typography>
-            <Typography variant="h6" color=" rgba(0, 0, 0, 0.302)">{user.Designation }</Typography>
+            <Typography variant="h6" color="rgba(105,100,100,0.548)">{user.Designation }</Typography>
 
             <div>
               <button onClick={() => setFollowersToggle(!followersToggle)}>
